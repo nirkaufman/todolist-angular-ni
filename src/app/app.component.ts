@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import {TodolistService} from './services/todolist.service';
 import {Item} from './services/item';
+import {TodolistService} from './services/todolist.service';
 
 @Component({
   selector: 'app-root',
@@ -8,14 +8,14 @@ import {Item} from './services/item';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  private todolist: TodolistService<Item>;
   public title = 'Title';
+  private todolist: TodolistService<Item>;
 
   constructor(todolist: TodolistService<Item>) {
     this.todolist = todolist;
   }
 
-  get items(): Item[] {
+  get items(): Array<Item> {
     return this.todolist.items;
   }
 
@@ -24,9 +24,7 @@ export class AppComponent {
   }
 
   removeItem(item: Item): void {
-    const index = this.items.indexOf(item);
-    this.items.splice(index, 1);
+    this.todolist.removeItem(item.id);
   }
-
 
 }

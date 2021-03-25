@@ -1,5 +1,5 @@
 export class Item {
-  private readonly id: number;
+  readonly id: number;
   completed: boolean;
   title: string;
 
