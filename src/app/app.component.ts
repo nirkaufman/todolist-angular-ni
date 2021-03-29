@@ -13,7 +13,6 @@ import {AuthService, CurrentUser} from './auth/auth.service';
               <li><span (click)="signOut()">logout {{currentUser.name}}</span></li>
           </ul>
       </nav>
-
       <router-outlet></router-outlet>
   `,
   styles: [`

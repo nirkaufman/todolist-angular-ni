@@ -1,4 +1,7 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
+import {Router} from '@angular/router';
+import {HttpClient} from '@angular/common/http';
+import {catchError, map} from 'rxjs/operators';
 
 export interface CurrentUser {
   id: number;
@@ -10,17 +13,21 @@ export interface CurrentUser {
 export class AuthService {
   currentUser: CurrentUser | null;
 
-  constructor() {
+  constructor(private router: Router, private httpClient: HttpClient) {
     this.currentUser = null;
   }
 
   signIn(userName: string, password: string): void {
-    // todo: hit the API
-    console.log({userName, password});
-    this.currentUser = {id: 1, name: 'Nir Kaufman', email: 'nir@500tech.com'};
+    // go to API and ask for a user
+    this.httpClient.get<CurrentUser>('https://jsonplaceholder.typicode.com/users/1')
+        .subscribe(user => {
+          this.currentUser = user;
+          this.router.navigate(['profile']);
+        });
+
   }
 
-  signPut(): void{
+  signPut(): void {
     // todo: hit the API
     this.currentUser = null;
   }

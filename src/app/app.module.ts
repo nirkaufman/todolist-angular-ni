@@ -8,6 +8,7 @@ import {LoginComponent} from './auth/sign-in/login.component';
 import {TodolistComponent} from './todolist/todolist.component';
 import {UserProfileModule} from './user-profile/user-profile.module';
 import {UserProfileComponent} from './user-profile/user-profile/user-profile.component';
+import {HttpClientModule} from '@angular/common/http';
 
 const routes = [
   {path: '', component: LoginComponent},
@@ -23,6 +24,7 @@ const routes = [
     TodolistModule,
     AuthModule,
     UserProfileModule,
+    HttpClientModule,
     RouterModule.forRoot(routes)
   ],
   bootstrap: [AppComponent]
