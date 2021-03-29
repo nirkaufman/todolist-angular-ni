@@ -11,7 +11,6 @@ export class ListComponent {
   items: Array<Item>;
 
   @Output()
-  remove = new EventEmitter<Item>();
-
+  remove = new EventEmitter<number>();
 
 }

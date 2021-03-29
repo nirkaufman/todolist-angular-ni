@@ -1,0 +1,14 @@
+<ul>
+    <li *ngFor="let item of items">
+        <div>
+            <input [checked]="item.completed"
+                   (change)="item.toggleCompleted($event)" type="checkbox"/>
+            <label>{{ item.title }}</label>
+        </div>
+        <div>
+            <button (click)="remove.emit(item.id)">X</button>
+        </div>
+    </li>
+</ul>
+
+
