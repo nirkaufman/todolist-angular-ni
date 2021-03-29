@@ -43,7 +43,6 @@ import {Item} from './services/item';
   `]
 })
 export class TodolistComponent  {
-
   public title = 'Title';
   private todolist: TodolistService;
 
