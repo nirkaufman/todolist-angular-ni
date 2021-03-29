@@ -1,20 +1,12 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
-import { AppComponent } from './app.component';
-import { ListComponent } from './todolist/list/list.component';
-import { ItemFormComponent } from './todolist/item-form/item-form.component';
-import {FooterComponent} from './todolist/footer/footer.component';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {AppComponent} from './app.component';
+import {TodolistModule} from './todolist/todolist.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ListComponent,
-    ItemFormComponent,
-    FooterComponent
-  ],
+  declarations: [AppComponent],
   providers: [],
-  imports: [BrowserModule],
+  imports: [BrowserModule, TodolistModule],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

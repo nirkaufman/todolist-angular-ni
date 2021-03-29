@@ -19,8 +19,28 @@ import {Item} from './services/item';
       </div>
 
   `,
-  styles: [
-  ]
+  styles: [`
+      h1 {
+          text-align: center;
+          text-transform: uppercase;
+          color: rgb(255, 160, 59)
+      }
+
+      .wrapper {
+          display: flex;
+          justify-content: center;
+      }
+      .list-container {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+      }
+
+      .content-body {
+          background-color: rgba(242,250,255,0.49);
+      }
+
+  `]
 })
 export class TodolistComponent  {
 

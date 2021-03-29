@@ -11,12 +11,8 @@ import {ItemFormComponent} from './item-form/item-form.component';
     FooterComponent,
     ListComponent,
     ItemFormComponent],
-  exports: [
-    TodolistComponent
-  ],
-  imports: [
-    CommonModule
-  ]
+  exports: [TodolistComponent],
+  imports: [CommonModule]
 })
 export class TodolistModule {
 }
