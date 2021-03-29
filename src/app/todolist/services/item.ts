@@ -3,10 +3,10 @@ export class Item {
   completed: boolean;
   title: string;
 
-  constructor(title: string) {
+  constructor(title: string, itemId?: number, completed?: boolean) {
     this.title = title;
-    this.id = Date.now();
-    this.completed = false;
+    this.id = itemId || null;
+    this.completed = completed || false;
   }
 
   toggleCompleted(event): void {

@@ -42,12 +42,16 @@ import {Item} from './services/item';
 
   `]
 })
-export class TodolistComponent  {
+export class TodolistComponent implements OnInit {
   public title = 'Title';
   private todolist: TodolistService;
 
   constructor(todolist: TodolistService) {
     this.todolist = todolist;
+  }
+
+  ngOnInit(): void {
+    this.todolist.reloadItems();
   }
 
   get items(): Array<Item> {

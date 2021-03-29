@@ -1,5 +1,6 @@
-import {Component, Input, EventEmitter, Output} from '@angular/core';
+import {Component, Input, EventEmitter, Output, OnInit, OnDestroy, AfterViewInit} from '@angular/core';
 import {Item} from '../services/item';
+import {CanDeactivate} from '@angular/router';
 
 @Component({
   selector: 'app-list',
@@ -12,5 +13,4 @@ export class ListComponent {
 
   @Output()
   remove = new EventEmitter<number>();
-
 }
