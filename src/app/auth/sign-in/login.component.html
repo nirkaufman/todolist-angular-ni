@@ -1,8 +1,20 @@
 <h3>Sign in</h3>
-<form>
+
+<button (click)="reset()"> reset </button>
+<form [formGroup]="loginForm"
+      (ngSubmit)="signIn()">
     <ul>
-    <li><input placeholder="username" type="text"></li>
-    <li><input placeholder="password" type="password"></li>
-    <li><button type="button" (click)="signIn()">submit</button></li>
+    <li>
+        <input formControlName="username"
+               placeholder="username" type="text">
+        <span *ngIf="loginForm.get('username').errors?.required">user name is required</span>
+    </li>
+    <li>
+        <input formControlName="password"
+               placeholder="password" type="password">
+    </li>
+    <li>
+        <button>submit</button>
+    </li>
     </ul>
 </form>

@@ -69,5 +69,4 @@ export class TodolistComponent implements OnInit {
   clearCompleted(): void {
     this.todolist.clearCompleted();
   }
-
 }
